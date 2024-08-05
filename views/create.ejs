@@ -1,0 +1,15 @@
+<%- include("header.ejs") %>
+
+<div class="post-container">
+  <h2>Create a new post</h2>
+
+  <div class="form-container">
+    <form action="/submit" method="Post">
+      <input name="title" type="text" class="title" placeholder="Title" />
+      <textarea name="content" class="content" rows="4" cols="50">
+Content </textarea
+      >
+      <input type="submit" class="submit" value="Create now" />
+    </form>
+  </div>
+</div>

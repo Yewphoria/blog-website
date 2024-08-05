@@ -1,0 +1,65 @@
+<%- include("header.ejs") %> <% if(locals.post ) { %>
+
+
+  <div class="info-container">
+      
+      <div class="container">
+        <div class="row">
+          <div class="col-6">
+            <h2>Posted on <%= post.date %></h2>
+            <form action="/updatePost/<%=id%>" method="post">
+              <div>
+                <label>Title:</label>
+                <input
+                  name="newTitle"
+                  type="text"
+                  class="title"
+                  placeholder="<%= post.title %>"
+                  style="margin-left: 46px;"
+                />
+              </div>
+              <div>
+                <label>Content:</label>
+                  <input
+                    name="newContent"
+                    type="textfield"
+                    class="content"
+                    placeholder="<%= post.content %>"
+                    size="50"
+                    style="margin-left: 20px;"
+                  />
+              </div>
+              <div class="row">
+                
+              <div class="col-6"><input type="submit" class="submit" value="Update" /></div>
+              <div class="col-6">
+                  <div class="deleteButton">
+                    <form action="/deletePost/<%=id%>" method="post">
+                    <input type="submit" class="delete" value="Delete" />
+                    </form>
+                              </div>
+              </div>
+            </div>
+            </form>
+            
+            
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <% } else { %>
+  <div
+    style="
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    "
+  >
+    <h3>No posts to display</h3>
+  </div>
+
+  <%}%>
+</body>
